@@ -1,0 +1,2091 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass matua-article
+\begin_preamble
+
+% Template for Elsevier CRC journal article
+% version 1.1 dated 16 July 2013
+
+% This file (c) 2013 Programa de matemáticas.  Modifications may be freely made,
+% provided the edited file is saved under a different name
+% This file contains modifications for MATUA journals
+% but may easily be adapted to other journals
+
+% Changes since version 1.0
+% - matua-article class option changed from 1p to 4p (to better reflect CRC layout)
+
+%-----------------------------------------------------------------------------------
+
+%% This template uses the matua-article.cls document class and the extension package ecrc.sty
+%% For full documentation on usage of matua-article.cls, consult the documentation "matua-doc.pdf"
+%% Further resources available at http://www.matua.com/latex
+
+%-----------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Important note on usage                  %%
+%% -----------------------                  %%
+%% This file must be compiled with PDFLaTeX %%
+%% Using standard LaTeX will not work!      %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\batchmode
+\makeatletter
+\def\input@path{{style/}{sections/}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{matua-ecrc}
+\usepackage{balance}
+\usepackage[activeacute,spanish,es-tabla]{babel}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{multicol}
+%\usepackage[latin1,utf8x]{inputenc}
+\usepackage{amssymb,amsmath}
+\usepackage{supertabular,float}
+\usepackage{fixltx2e}
+\usepackage{dblfloatfix}
+\graphicspath{{pdf/}{ps/}{image/}{sections/Figures/}}
+% Figures within a column...
+\makeatletter
+\newenvironment{tablehere}
+{\def\@captype{table*}}
+{}
+\newenvironment{figurehere}
+{\def\@captype{figure*}}
+{}
+\makeatother
+
+%% The ecrc package defines commands needed for running heads and logos.
+%% For running heads, you can set the journal name, the volume, the starting page and the authors
+
+%% set the volume if you know. Otherwise `00'
+\volume{I}
+\matuavolumen{III}
+\matuayear{2016}
+
+%% set the starting page if not 1
+\firstpage{1}
+
+%% Give the name of the journal
+\journalname{Revista Del Programa De Matem\'aticas}
+
+%% Give the author list to appear in the running head
+%% Example \runauth{C.V. Radhakrishnan et al.}
+\runauth{El autor}
+
+%% The choice of journal logo is determined by the \jid and \jnltitlelogo commands.
+%% A user-supplied logo with the name <\jid>logo.pdf will be inserted if present.
+%% e.g. if \jid{yspmi} the system will look for a file yspmilogo.pdf
+%% Otherwise the content of \jnltitlelogo will be set between horizontal lines as a default logo
+
+%% Give the abbreviation of the Journal.
+\jid{procs}
+
+%% Give a short journal name for the dummy logo (if needed)
+%\jnltitlelogo{MATUA}
+
+%% Hereafter the template follows `matua-rticle'.
+%% For more details see the existing template files matua-article-3p-template.tex and matua-article-4p-template.tex.
+%% End of ecrc-specific commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%% \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+% if you have landscape tables
+\usepackage[figuresright]{rotating}
+
+% put your own definitions here:
+%   \newcommand{\cZ}{\cal{Z}}
+%   \newtheorem{def}{Definition}[section]
+%   ...
+
+% add words to TeX's hyphenation exception list
+%\hyphenation{author another created financial paper re-commend-ed Post-Script}
+\newcounter{definition}
+\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+%\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{question}{Question}
+%\renewenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\balance
+% declarations for front matter
+%%%%%%%%%%%%5listing%%%%%%%%%%%%%%%%%%%555
+\makeatletter
+\definecolor{gray97}{gray}{.97}
+\definecolor{gray75}{gray}{.75}
+\definecolor{gray45}{gray}{.45}
+
+\usepackage{listings}
+\lstset{ frame=Ltb,
+     framerule=0pt,
+     aboveskip=0.5cm,
+     framextopmargin=3pt,
+     framexbottommargin=3pt,
+     framexleftmargin=0.4cm,
+     framesep=0pt,
+     rulesep=.4pt,
+     backgroundcolor=\color{gray97},
+     rulesepcolor=\color{black},
+     %
+     stringstyle=\ttfamily,
+     showstringspaces = false,
+     basicstyle=\small\ttfamily,
+     commentstyle=\color{gray45},
+     keywordstyle=\bfseries,
+     %
+     numbers=left,
+     numbersep=15pt,
+     numberstyle=\tiny,
+     numberfirstline = false,
+     breaklines=true,
+   }
+ 
+% minimizar fragmentado de listados
+\lstnewenvironment{listing}[1][]
+   {\lstset{#1}\pagebreak[0]}{\pagebreak[0]}
+ 
+\lstdefinestyle{consola}
+   {basicstyle=\scriptsize\bf\ttfamily,
+    backgroundcolor=\color{gray75},
+   }
+ 
+\lstdefinestyle{C}
+   {language=C,
+   }
+\makeatother
+\renewcommand{\baselinestretch}{1.5}
+\end_preamble
+\options 4p,times,english
+\use_default_options false
+\begin_modules
+theorems-std
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8x
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Esta es una plantilla para LyX para diagramar los archivos que son enviados
+ para la publicación en la revista MATUA 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://matua.com.co/
+\end_layout
+
+\end_inset
+
+ o 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrontmatter
+
+\end_layout
+
+\begin_layout Titulo
+Herramientas para Realizar Investigación Reproducible
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\size normal
+Con 
+\series bold
+\size default
+
+\backslash
+tnoteref
+\series default
+\size normal
+ sus referencias para los pie de títulos.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title(ingles)
+An article sample
+\end_layout
+
+\begin_layout Author
+Antalcides Olivo Burgos 
+\end_layout
+
+\begin_layout Email
+antalcides@hotmail.es
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Se requiere al menos una dirección de correo electrónico.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Email
+http://matua.com.co/
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+url
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Address
+Barranquilla Colombia 
+\end_layout
+
+\begin_layout Address
+Kilométro 7 via a Puerto colombia 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Este es un ejemplo del segundo estilo de la sección autor:
+\end_layout
+
+\begin_layout Author
+Primer autor
+\end_layout
+
+\begin_layout Email
+
+\shape italic
+cvr@hotmail.com
+\end_layout
+
+\begin_layout Address
+Barranquilla Colombia
+\end_layout
+
+\begin_layout Author
+K.
+\begin_inset space ~
+\end_inset
+
+Barraza
+\end_layout
+
+\begin_layout Email
+
+\shape italic
+http://www.aaaa.com
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+url
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Address
+kilométro 7 vía a Puerto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+
+\lang english
+According to Christopher Gandrud.
+ 
+\begin_inset Quotes fls
+\end_inset
+
+Reproducibility was a key part of scientific research and has been called
+ the demarcation between science and non-science
+\begin_inset Quotes frs
+\end_inset
+
+.
+ This article presents the most popular or most used for this purpose so
+ that in the same document can be integrated code tools, mathematical formulatio
+n, results and analysis of research so that any reader can reconstruct and
+ verify the results presented in the document
+\end_layout
+
+\begin_layout Keywords
+Markup 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ Markdown 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ Knitr 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ R 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ Python 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ PythonTex
+\end_layout
+
+\begin_layout Resumen
+Según Christopher Gandrud.
+ 
+\begin_inset Quotes fls
+\end_inset
+
+La reproducibilidad ha sido una parte clave de la investigación científica
+ y se ha denominado la demarcación entre ciencia y no-ciencia
+\begin_inset Quotes frs
+\end_inset
+
+.
+ En este artículo presentaremos las herramientas más populares o más usadas
+ para este fin de tal forma que en un mismo documento se pueda integrar
+ el código, la formulación matemática, los resultados y el análisis de la
+ investigación para que cualquier lector pueda reconstruir y verificar los
+ resultados presentados en el documento
+\end_layout
+
+\begin_layout Palabras
+Markup 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ Markdown 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ Knitr 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ R 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ Python 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ PythonTex
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+separar las palabra claves con 
+\series bold
+
+\backslash
+sep
+\series default
+.
+ 
+\series bold
+
+\backslash
+PACS
+\series default
+ and 
+\series bold
+
+\backslash
+MSC
+\series default
+ son opcionales
+\lang english
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrontmatter
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+mantener esta nota vacia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Use here the command 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+linenumbers 
+\end_layout
+
+\end_inset
+
+ and enable the package 
+\series bold
+lineno
+\series default
+ in the preamble if you need line numbers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción.
+\end_layout
+
+\begin_layout Standard
+Actualmente, existen una serie de iniciativas orientadas a lograr mayor
+ transparencia, flexibilidad y reproducibilidad en la ciencia naturales
+ y las Matemáticas, lo cual también se ha extendido a las ciencias sociales.
+ Si bien este enfoque ha sido propuesto para las ciencias sociales hace
+ un tiempo, solo recientemente se han desarrollado algunas herramientas
+ concretas que facilitan la reproducibilidad en los procesos de investigación.
+ En este contexto, uno de los tipos de herramientas que últimamente están
+ siendo utilizadas son aquellas que permiten “programación literaria”, es
+ decir, que combinan el código de los programas utilizados con el texto
+ del documento respectivo.
+ En otras palabras, la escritura de reportes y/o artículos y su análisis
+ es parte de un mismo documento.
+ Esto facilita una documentación más transparente de los procesos de investigaci
+ón, permitiendo que cualquier investigador sea capaz de reproducir los resultado
+s y los análisis.
+ 
+\end_layout
+
+\begin_layout Standard
+Una de estas herramientas es el lenguaje de Marcado o Markup, como Mardown
+ el cual permite la combinación de edición de texto, código y fórmulas matemátic
+as en un solo documento.
+ En este artículo se describe el proceso de instalación y utilización de
+ paquetes PythonTeX, Knitr para elaboración de un texto reproducible y dinámico.
+ Se indican los requisitos tecnológicos y el protocolo de su operación a
+ partir de ejemplos en que se realizan operaciones con matrices y se hacen
+ cálculos elementales de estadística descriptiva.
+\end_layout
+
+\begin_layout Section
+Investigación reproducible.
+\end_layout
+
+\begin_layout Standard
+De acuerdo con la Wikipedia (en inglés),
+\end_layout
+
+\begin_layout Standard
+El término investigación reproducible se atribuye a Jon Claerbout, de la
+ Universidad de Stanford y se refiere a la idea de que el producto final
+ de la investigación no debería circunscribirse a un artículo sino comprender
+ también el entorno computacional completo usado en la generación los resultados
+ que contiene, tales como el código, los datos, etc.
+ para que puedan ser reproducidos y se pueda avanzar a partir de ellos.
+\end_layout
+
+\begin_layout Standard
+De acuerdo con lo anterior podríamos decir que:
+\end_layout
+
+\begin_layout Standard
+Los resultados de una investigación son reproducibles si hay suficiente
+ información disponible para que investigadores independientes consigan
+ los mismos resultados con los mismos procedimientos.
+ La investigación reproducible requiere que los conjuntos de datos y el
+ código computacional estén disponibles para la verificación de los resultados
+ publicados y la realización de análisis alternativos.
+ La necesidad de la publicación de investigaciones reproducibles aumenta
+ por varias razones:
+\end_layout
+
+\begin_layout Enumerate
+Los investigadores examinan con mayor frecuencia la debilidad de las asociacione
+s e interacciones complejas.
+\end_layout
+
+\begin_layout Enumerate
+Las nuevas tecnologías permiten a los científicos compilar bases de datos
+ complejos de gran tamaño.
+\end_layout
+
+\begin_layout Enumerate
+El desarrollo de mayores capacidades estadísticas y computacionales permite
+ a los investigadores explorar las bases de datos e identificar asociaciones
+ de interés, y aumenta la probabilidad de identificar asociaciones espurias.
+\end_layout
+
+\begin_layout Enumerate
+Se puede determinar con rapidez si una investigación es fraudulenta o no.
+\end_layout
+
+\begin_layout Enumerate
+A medida que los análisis se hacen más complicados, aumenta la posibilidad
+ de errores, por lo que los resultados de la investigación pueden ser engañosos.
+\end_layout
+
+\begin_layout Enumerate
+Los investigadores que no expertos en el uso del software utilizado pueden
+ generar problemas, especialmente cuando éste se aplica a situaciones no
+ imaginadas originalmente.
+\end_layout
+
+\begin_layout Section
+Herramientas a usar.
+\end_layout
+
+\begin_layout Standard
+Dependiendo del campo de investigación podemos usar varias herramientas
+\end_layout
+
+\begin_layout Itemize
+En Estadística se puede usar 
+\series bold
+R
+\series default
+ con 
+\series bold
+Rstudio
+\series default
+ para realizar la investigación y obtener los resultados y para redactar
+ los documentos se puede usar entre otros las librerias de 
+\series bold
+R
+\series default
+ , 
+\series bold
+Rmardown
+\series default
+, 
+\series bold
+Sweave
+\series default
+ o 
+\series bold
+Knitr
+\series default
+ junto con 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf 
+\backslash
+LaTeX}
+\end_layout
+
+\end_inset
+
+ y 
+\series bold
+Pandoc
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+En Matemáticas se puede usar 
+\series bold
+Python
+\series default
+, 
+\series bold
+Sage
+\series default
+, 
+\series bold
+Maxima
+\series default
+ o 
+\series bold
+Julia
+\series default
+ para obtener los resultados dependiendo del tipo de investigación, aunque
+ también existen alternativas comerciales muy buenas con 
+\series bold
+Mathematica
+\series default
+, 
+\series bold
+Maple
+\series default
+ o 
+\series bold
+Matlab
+\series default
+ también dependiendo del tipo de investigación.
+ para redactar los documentos se puede usar los paquetes de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+bf
+\backslash
+LaTeX}
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+Maxiplot
+\series default
+, 
+\series bold
+PythonTex
+\series default
+ , 
+\series bold
+Sagetex
+\series default
+ y 
+\series bold
+Pandoc
+\series default
+.
+ También se pueden usar los 
+\series bold
+Notebook
+\series default
+ de 
+\series bold
+Sage
+\series default
+, 
+\series bold
+Python
+\series default
+, 
+\series bold
+R
+\series default
+ o los de 
+\series bold
+Mathematica
+\series default
+ o 
+\series bold
+Maple
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+El paquete 
+\series bold
+Sweave
+\series default
+ desarrollado por 
+\series bold
+Leisch
+\series default
+ [11] [12] [13] permite mezclar código de
+\series bold
+ R
+\series default
+ y 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ en un mismo documento con el propósito de crear informes dinámicos que
+ se actualizan en función del cambio en los datos y la realización del proceso
+ de compilación.
+ De esta manera, se combina la potencia en el análisis de datos y construcción
+ de gráficos en 
+\series bold
+R
+\series default
+, con la versatilidad de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ para generar documentos estructurados.
+ 
+\end_layout
+
+\begin_layout Itemize
+En 2012, 
+\series bold
+Xie
+\series default
+ [15] [16] [17] [14] [18] [19] desarrolló 
+\series bold
+Knitr
+\series default
+ con el mismo propósito que 
+\series bold
+Sweave
+\series default
+, extendiendo las capacidades de este último y permitiendo la integración
+ del código de 
+\series bold
+R
+\series default
+ con 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+, 
+\series bold
+Markdown
+\series default
+, 
+\series bold
+LyX
+\series default
+, entre otros; además de reducir la curva de aprendizaje para usuarios nóveles.
+\end_layout
+
+\begin_layout Itemize
+En 2013, 
+\series bold
+Poore
+\series default
+ [20] publicó el paquete 
+\series bold
+PythonTeX
+\series default
+ que permite introducir y ejecutar código de 
+\series bold
+Python
+\series default
+ en un documento 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+.
+ El paquete permite aprovechar el potencial de 
+\series bold
+Python
+\series default
+ como lenguaje de propósito general, así como las capacidades de librerías
+ como 
+\series bold
+Scipy
+\series default
+, 
+\series bold
+Numpy
+\series default
+ y 
+\series bold
+Matplotlib
+\series default
+.
+ El paquete provee soporte para lenguajes de propósito general como 
+\series bold
+Ruby
+\series default
+, y de cómputo científico como 
+\series bold
+Julia
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Maxiplot
+\series default
+ Es un paque te de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ que de acuedo con las palabras de su creados 
+\series bold
+José Manuel Mira Ros
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes fls
+\end_inset
+
+El propósito de este paquete 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ es, precisamente, permitir ‘programar’ e importar los resultados sin necesidad
+ de trabajar con varios ficheros y entornos.
+ Dentro del documento 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ se podrá incluir código en 
+\series bold
+Maxima
+\series default
+; al compilar el documento se genera un fichero (con extensión .mac) directamente
+ procesable por 
+\series bold
+Maxima
+\series default
+, que a su vez genera otro fichero (con extensión .mxp) que, al recompilar
+ el documento 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX 
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+, será automáticamente insertado.
+ De igual forma se pueden insertar comandos 
+\series bold
+Gnuplot
+\series default
+ gracias a los comandos añadidos por 
+\series bold
+J.
+ M.
+ Mira
+\series default
+.
+ Así, ademśs de los ficheros anteriores, se generará un fichero con la extensión
+ .gnp que, tras ser procesados por Gnuplot podrán agregarse a su documento
+\begin_inset Quotes frs
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Trabajando en Estadística.
+\end_layout
+
+\begin_layout Standard
+Parto del echo que el lector conoce 
+\series bold
+R
+\series default
+ y 
+\series bold
+Rstudio
+\series default
+ y sabe trabajar con el en caso de no conocerlo revisar 
+\end_layout
+
+\begin_layout Standard
+debemos instalar las librerías 
+\series bold
+rmarkdown, knitr,rveals.
+ 
+\series default
+también podría instalar las librerias
+\series bold
+ mardown 
+\series default
+y
+\series bold
+ shiny.
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\series bold
+Instalando Librerias en R desde Rstudio
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace*{15pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename image/install-rpackage.pdf
+	lyxscale 60
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego se escoge el tipo de documento que queremos publicar, una diapositiva,
+ un documento en Pdf para un artículo o un documento html.
+ como indica la siguiente figura (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-del-trabajo"
+
+\end_inset
+
+)
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama del trabajo de Rstudio
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-del-trabajo"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename image/RMarkdownOutputFormats.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La estructura del trabajo de R es:
+\end_layout
+
+\begin_layout Standard
+Markdown = knitr con markdown + pandoc = Salida.
+ Donde la salida es cualquiera de las mostradas en la figura (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-del-trabajo"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Escogiendo documento de salida en Rstudio
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename image/RStudio_005.pdf
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Escogemos la opción RMardown...
+\end_layout
+
+\begin_layout Standard
+completamos la ventana escogiendo PDf o Word.
+ En caso de que se quiera publicar en la Web se escoge HTML.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nuevo documento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename image/Rstudio_007.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora Rstudio nos muestra un documento plantilla como este
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+--- 
+\end_layout
+
+\begin_layout Plain Layout
+
+title: "Articulo-prueba" 
+\end_layout
+
+\begin_layout Plain Layout
+
+author: "Antalcides" 
+\end_layout
+
+\begin_layout Plain Layout
+
+date: "14 de abril de 2016" 
+\end_layout
+
+\begin_layout Plain Layout
+
+output: pdf_document 
+\end_layout
+
+\begin_layout Plain Layout
+
+---
+\end_layout
+
+\begin_layout Plain Layout
+
+This is an R Markdown document.
+ Markdown is a simple formatting syntax for authoring HTML, PDF, and MS
+ Word documents.
+ For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+When you click the **Knit** button a document will be generated that includes
+ both content as well as the output of any embedded R code chunks within
+ the document.
+ You can embed an R code chunk like this:
+\end_layout
+
+\begin_layout Plain Layout
+
+```{r} 
+\end_layout
+
+\begin_layout Plain Layout
+
+summary(cars) 
+\end_layout
+
+\begin_layout Plain Layout
+
+```
+\end_layout
+
+\begin_layout Plain Layout
+
+You can also embed plots, for example:
+\end_layout
+
+\begin_layout Plain Layout
+
+```{r, echo=FALSE}
+\end_layout
+
+\begin_layout Plain Layout
+
+plot(cars)
+\end_layout
+
+\begin_layout Plain Layout
+
+```
+\end_layout
+
+\begin_layout Plain Layout
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent
+ printing of the R code that generated the plot.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para generar el documento escogemos en el menú knitr -> PDF
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Generando Pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename image/Rstudio_008.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Obteniendo el documento que se muestra en la siguiente página
+\end_layout
+
+\begin_layout Standard
+\begin_inset External
+	template PDFPages
+	filename image/articulo-prueba.pdf
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Trabajando en Matemáticas
+\end_layout
+
+\begin_layout Standard
+Es habitual que cuando se realiza un nuevo descubrimiento o se dessarrolla
+ una nueva teoría se generen nuevas aplicaciones por parte de un investigador
+ o grupo colegiado de investigación, sus hallazgos son evaluados por pares
+ independientes que intentan replicar de forma controlada dichos experimentos
+ y pruebas.
+\end_layout
+
+\begin_layout Standard
+Los pares generalmente siguen el método descrito por los autores originales
+ e intentan comprobar si realmente se obtienen resultados descritos por
+ los autores.
+\end_layout
+
+\begin_layout Standard
+Ya que los resultados que se obtienen de una investigación deben ser reproducibl
+es para poder ser reconocidos es por eso que la reproducibilidad implica
+ que los investigadores compartan sus bases de datos, el código computacional
+ utilizado y el procedimiento seguido en sus estudios.
+\end_layout
+
+\begin_layout Standard
+Actualmente, revistas científicas han formulado lineamientos de publicación
+ que exigen la posibilidad de reproducir los resultados obtenidos en los
+ estudios.
+ Las razones de esta exigencia son múltiples, entre las más representativas
+ se encuentran: 
+\end_layout
+
+\begin_layout Standard
+• Examinar la pertinencia del protocolo metodológico y computacional.
+ 
+\end_layout
+
+\begin_layout Standard
+• Analizar la potencia de las pruebas y asociaciones entre variables.
+ 
+\end_layout
+
+\begin_layout Standard
+• Verificar la coherencia de los resultados obtenidos respecto de las conclusion
+es emitidas.
+ 
+\end_layout
+
+\begin_layout Standard
+• Demarcar la cultura científica de la no científica.
+\end_layout
+
+\begin_layout Subsection
+Empezando con PythonTex
+\end_layout
+
+\begin_layout Standard
+Para poder cumplir con estas exigencias les presentaré la herrameinta para
+ editar los documentos para matemáticas, esta herramienta es 
+\series bold
+PythoTex
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+El paquete 
+\series bold
+PythonTeX
+\series default
+ es de reciente creación y continúa en fase de desarrollo.
+ Para su funcionamiento requiere una distribución de 
+\series bold
+LaTeX
+\series default
+ como 
+\series bold
+Texlive
+\series default
+ o 
+\series bold
+MikTeX
+\series default
+.
+ Según el manual de usuario [22], es necesario contar con los siguientes
+ paquetes y sus dependencias: 
+\series bold
+fancyvrb
+\series default
+, 
+\series bold
+etex
+\series default
+, 
+\series bold
+etoolbox
+\series default
+, 
+\series bold
+xstring
+\series default
+, 
+\series bold
+pgfopts
+\series default
+, 
+\series bold
+newfloat
+\series default
+, 
+\series bold
+currfile
+\series default
+, y 
+\series bold
+color
+\series default
+ o 
+\series bold
+xcolor
+\series default
+.
+ Y 
+\series bold
+Python
+\series default
+ recomendamos a 
+\series bold
+Python
+\series default
+ en su versión 2.7 con las librerias 
+\series bold
+Scipy
+\series default
+, 
+\series bold
+Numpy
+\series default
+ , 
+\series bold
+Matplotlib, ez_ setup, setuptools 
+\series default
+y
+\series bold
+ pygments.
+\end_layout
+
+\begin_layout Subsubsection
+Protocolo de compilación–interpretación 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Python
+\series default
+ es un lenguaje de programación que requiere de un interprete para poder
+ ejecutarse.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ por su parte es un lenguaje de marcado que necesita un compilador para
+ traducir código fuente a máquina.
+ El paquete PythonTeX permite la interacción entre ambos lenguajes y aprovechar
+ su potencial.
+ Para generar textos reproducibles y dinámicos con la interacción de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ y 
+\series bold
+Python
+\series default
+ se recomienda seguir el siguiente protocolo:
+\end_layout
+
+\begin_layout Standard
+1.
+ Redactar un texto que incorpore 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ y 
+\series bold
+Python
+\series default
+ en un mismo archivo.
+\end_layout
+
+\begin_layout Standard
+2.
+ Compilar el archivo en un editor.
+ Este proceso extraerá el código de 
+\series bold
+Python
+\series default
+ del texto y lo almacenará en otro archivo.
+\end_layout
+
+\begin_layout Standard
+3.
+ Iniciar la línea de comandos e ir al directorio de la carpeta en que se
+ encuentran los paquetes 
+\series bold
+PythonTeX
+\series default
+, 
+\series bold
+pygments
+\series default
+ y los archivos de trabajo.
+ 
+\end_layout
+
+\begin_layout Standard
+4.
+ Activar el paquete 
+\series bold
+PythonTeX
+\series default
+ seguido del nombre del archivo .tex (pythontex archivo.tex) y observar los
+ resultados que genera el proceso, en la pantalla se mostrará la cantidad
+ de errores encontrados.
+ Si no se presentan errores, se genera un archivo interpretado por 
+\series bold
+Python
+\series default
+ en conjunto con los demás paquetes externos.
+\end_layout
+
+\begin_layout Standard
+5.
+ Regresar al editor y volver a compilar el archivo original.
+ El texto final incorporará los resultados generados previamente en 
+\series bold
+Python
+\series default
+ y se generará un archivo con extensión pdf.
+\end_layout
+
+\begin_layout Standard
+Recuerden que hay que instalar 
+\series bold
+PythonTex
+\series default
+ como se instala cualquier paquete de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ pero en Ubuntu se puede instlar desde la consola con el siguiente comando
+ 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sudo apt-get install texlive-subpackage-containing-pythontex
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si tenemos 
+\noun on
+Texmaker
+\noun default
+ lo podemos configurar de tal forma que el proceso de generación sea automatico
+\end_layout
+
+\begin_layout Subsubsection
+Ejemplo de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\backslash
+ 
+\end_layout
+
+\end_inset
+
+ con 
+\series bold
+PythonTex
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+Apendice 
+\end_layout
+
+\begin_layout Section
+nombre
+\end_layout
+
+\begin_layout Standard
+Apendice, solo cuando sea necesario.
+\end_layout
+
+\begin_layout Section*
+-----------------
+\end_layout
+
+\begin_layout Standard
+si usted usa BibTeX:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "xampl,bibliografia"
+options "bibtotoc,elsarticle-harv"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+---------------------
+\end_layout
+
+\begin_layout Standard
+\noindent
+Otra forma de crear la Bibliografía:
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Frank Mittelbach and Michel Goossens: 
+\emph on
+The LaTeX Companion Second Edition.
+
+\emph default
+ Addison-Wesley, 2004.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Scott Pakin.
+ The comprehensive LaTeX symbol list, 2005.
+\end_layout
+
+\end_body
+\end_document

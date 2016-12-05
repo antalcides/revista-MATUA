@@ -1,0 +1,383 @@
+
+% Template for Elsevier CRC journal article
+% version 1.1 dated 16 July 2013
+
+% This file (c) 2013 Programa de matemáticas.  Modifications may be freely made,
+% provided the edited file is saved under a different name
+% This file contains modifications for MATUA journals
+% but may easily be adapted to other journals
+
+% Changes since version 1.0
+% - matua-article class option changed from 1p to 4p (to better reflect CRC layout)
+
+%-----------------------------------------------------------------------------------
+
+%% This template uses the matua-article.cls document class and the extension package ecrc.sty
+%% For full documentation on usage of matua-article.cls, consult the documentation "matua-doc.pdf"
+%% Further resources available at http://www.matua.com/latex
+
+%-----------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Important note on usage                  %%
+%% -----------------------                  %%
+%% This file must be compiled with PDFLaTeX %%
+%% Using standard LaTeX will not work!      %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\batchmode
+\makeatletter
+\def\input@path{{style/}{sections/}}
+\makeatother
+%% The '4p' and 'times' class options of matua-article are used for Elsevier CRC for change logo
+\documentclass[4p,times]{matua-article}
+
+%% The `ecrc' package must be called to make the CRC functionality available
+\usepackage{matua-ecrc}
+\usepackage{balance}
+\usepackage[activeacute,spanish,es-tabla]{babel}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage[latin1,utf8x]{inputenc}
+\usepackage{amssymb,amsmath}
+\usepackage{supertabular,float}
+\usepackage{fixltx2e}
+\usepackage{dblfloatfix}
+\graphicspath{{pdf/}{ps/}{image/}{sections/Figures/}}
+% Figures within a column...
+\makeatletter
+\newenvironment{tablehere}
+{\def\@captype{table*}}
+{}
+\newenvironment{figurehere}
+{\def\@captype{figure*}}
+{}
+\makeatother
+
+%% The ecrc package defines commands needed for running heads and logos.
+%% For running heads, you can set the journal name, the volume, the starting page and the authors
+
+%% set the volume if you know. Otherwise `00'
+\volume{I}
+\matuavolumen{III}
+\matuayear{2016}
+
+%% set the starting page if not 1
+\firstpage{1}
+
+%% Give the name of the journal
+\journalname{Revista Del Programa De Matem\'aticas}
+
+%% Give the author list to appear in the running head
+%% Example \runauth{C.V. Radhakrishnan et al.}
+\runauth{El autor}
+
+%% The choice of journal logo is determined by the \jid and \jnltitlelogo commands.
+%% A user-supplied logo with the name <\jid>logo.pdf will be inserted if present.
+%% e.g. if \jid{yspmi} the system will look for a file yspmilogo.pdf
+%% Otherwise the content of \jnltitlelogo will be set between horizontal lines as a default logo
+
+%% Give the abbreviation of the Journal.
+\jid{procs}
+
+%% Give a short journal name for the dummy logo (if needed)
+%\jnltitlelogo{MATUA}
+
+%% Hereafter the template follows `matua-rticle'.
+%% For more details see the existing template files matua-article-3p-template.tex and matua-article-4p-template.tex.
+%% End of ecrc-specific commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%% \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+% if you have landscape tables
+\usepackage[figuresright]{rotating}
+
+% put your own definitions here:
+%   \newcommand{\cZ}{\cal{Z}}
+%   \newtheorem{def}{Definition}[section]
+%   ...
+
+% add words to TeX's hyphenation exception list
+%\hyphenation{author another created financial paper re-commend-ed Post-Script}
+\newcounter{definition}
+\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+%\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{question}{Question}
+%\renewenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\balance
+% declarations for front matter
+
+\begin{document}
+
+
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+\begin{frontmatter}
+
+\dochead{xxx-xxxx}
+%% Use \dochead if there is an article header, e.g. \dochead{Short communication}
+%\titulo{El t\'itulo en espa\~ol}
+\titulo{aaaaaaaaa-titulo}
+\title{xxxxxxxxx-title}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{<author name>}
+%% \address[label1]{<address>}
+%% \address[label2]{<address>}
+
+\author{xxxxx-Autor}
+
+\address{direcci\'on}
+\email{e-mail}
+\begin{abstract}
+Existence and uniquess of the weak solution for a Stokes  type equation modelling a compressible fluid have been studied in this work.
+Unlike  the classic Stokes equation in this model we replace the mass conservation equation by $div(\rho u)=0$, where $u$ is the velocity of fluid and  $\rho$ the mass density and prove existence and uniquess for a class of function $\rho>0$ satisfying the condition $\|\gra \rho(x)\|_\infty \leq \alpha$, for some constant $\alpha$. Besides, we propose an adaptive finite element method to approximate the solution based on the solution of a auxiliary problem consisting in 
+locally enriching a finite elements space. Finally, we present numerical results for the cavity problem solved by this adaptive method.
+
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+aaa,aaaaa,bbbb,dddd
+\end{keyword}
+\begin{resumen}
+En este artículo se demuestra la existencia y unicidad de la solución débil de un sistema de ecuaciones tipo Stokes que modela un flujo compresible.  A diferencia del modelo clásico de Stokes, en este modelo reemplazamos la ecuación de continuidad por la restricción  $div(\rho u)=0$, siendo $u$ el campo de velocidades del flujo y $\rho$ la densidad del fluido. Nuestro resultado de existencia y unicidad aplica a una clase de funciones $\rho$, $\rho$ es una función positiva con  $\|\gra \rho(x)\|_\infty \leq \alpha$, para alguna constante $\alpha$. Además, proponemos un método de elementos finitos adaptativo para aproximar la solución del modelo, que consiste en resolver localmente un problema auxiliar que se obtiene enriqueciendo el espacio de elementos finitos. Finalmente, presentamos la solución numérica del problema de la cavidad con el método adaptativo.
+\end{resumen}
+\begin{palabras}
+%% keywords here, in the form: keyword \sep keyword
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+aaa,aaaaa,bbbb,dddd
+\end{palabras}
+
+%% keywords here, in the form: keyword \sep keyword
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+
+\end{frontmatter}
+\vspace*{10pt}
+%\begin{multicols}{2}
+
+%%
+%% Start line numbering here if you want
+%%
+% \linenumbers
+
+%% main text
+\section{Primera}
+\label{p1}
+El prop\'osito de este art\'iculo es determinar la existencia y unicidad de un modelo tipo Stokes con densidad variable, y 
+presentar un estimativo a posteriori del error en la soluci\'on con un m\'etodo de elementos finitos. La 
+técnica adaptativa consiste en resolver localmente un problema auxiliar para construir un estimativo del error cometido
+en la aproximaci\'on.
+Sea $\Omega\subset\R^n$ un dominio acotado con frontera Lipschitz $\Gamma$. En este trabajo $n=2$ o 3.
+Sea $L^2_0(\Omega) = \{p\in L^2(\Omega) : \, \int_\Omega p \dx= 0 \}$, nuestro problema consiste en econtrar $(u, p) \in H^1(\Omega)^n\times L^2_0(\Omega)$ tal que
+\begin{equation} \label{eq:1}
+  \begin{split}
+   -\tfrac{1}{\mathrm{Re}}\Delta u + \gra p & =f,\quad \text{ en }\Omega,\\
+   \mathrm{div } (\rho\, u) & =0,\quad  \text{ en }\Omega,\\
+  \end{split}
+\end{equation}
+%
+y $u=0$ en $\Gamma$.
+Aquí $u:\Omega \to \R^n$ representa el campo de velocidades del flujo, $p:\Omega\to \R$ es la
+presi\'on en $\Omega$ y $\rho:\Omega \to \R$ es la densidad del fluido. Además, suponemos que 
+$\rho\in C^\infty(\Omega)$ y que existen constantes $b_1,\,b_2>0$ tales que
+%
+\begin{equation}\label{eq:03}
+  b_1 \leq \rho(x) \quad \text{ y } \quad \|\gra \rho(x)\|_\infty \leq b_2   \quad \text{ para todo }x\in \Omega.
+\end{equation}
+\section{Existencia y unicidad de la solución débil}
+
+En esta sección nuestro objetivo es demostrar la existencia y unicidad de la solución del problema variacional \eqref{eq:1}.
+Para ésto citamos de la referencia \cite{DL} el siguiente teorema abstracto.
+%
+%\begin{teorema}\label{teo:1}
+Consideremos dos espacios de Hilbert $V$ y $\Pi$ y dos formas bilineales continuas $a(\cdot,\cdot ):V× V\to \R $ y $b(\cdot,\cdot ):V× \Pi\to \R$. Supongamos que la forma bilineal $a$ es coerciva, 
+es decir, existe $\alpha >0$ tal que
+
+y la forma bilineal $b$ satisface la condición inf-sup, 
+ésta es, existe $\beta>0$ tal que
+
+ $ \beta \| q\| \leq \sup_{v\in V} \frac{b(v,q)}{\| v\| } , \quad  \text{ para todo }q\in  \Pi,$
+
+entonces el problema variacional \eqref{eq:1} tiene solución única.
+Para aplicar el teorema anterior a nuestra formulación variacional \eqref{eq:1} introducimos algunas definiciones y demostramos algunos resultados intermedios.
+
+%\begin{definicion}
+Sea $\zeta\in \R^n$ con $\|\zeta\|=1$, $(a,b)\subset \R$ con $ b-a=d>0$ y
+$d\neq \infty$. Denotaremos con $B_d(\zeta)$ al conjunto $B_d(\zeta) = \{ x\in \R^n ; a< x\cdot \zeta < b\}$.  $B_d(\zeta)$ se denomina una \emph{banda} en $\R^n$ de altura $d$ en la dirección de $\zeta$.
+%\end{definicion}
+%\end{teorema}
+%{\color{red}\lipsum[9]}
+\section{Segunda}
+\label{p1}
+%\ref{p1}
+%\lipsum[9]
+Ejemplo de una tabla sin enumerar y en la posición correcta
+\begin{center}
+\scalebox{0.6}{\begin{tablehere}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+aaaa & bbbbb & bbbbb & ccccc \\ 
+\hline 
+qqqqqqqqqqq & sssssssssssss & sssssssssssssss & ggggggggggggg \\ 
+\hline 
+aaaaaaaaaaa & ddddddddddd & ddddddddddd & vvvvvvvvvvvvvvv \\ 
+\hline 
+mmmmmmmmmmmmmm & aaaaaaaaaaaaaaaaa & aaaaaaaaaaa & aaaaaaaaaa \\ 
+\hline 
+\end{tabular}
+\end{tablehere}}
+
+\end{center}
+Ejemplo de una tabla enumerada con pie de tabla y en la posición correcta, quiera que \LaTeX\ la coloque en el lugar que el considere mejor no coloque [H] después de \verb| \begin{table} | 
+\begin{table}[H]
+  \centering
+  \begin{tabular}{lcr}
+    1 & 2 & 3 \\
+    4 & 5 & 6 \\
+    7 & 8 & 9
+  \end{tabular}
+  \caption{Blabla}
+  \label{tab:1}
+\end{table}
+
+%\lipsum[6-8]
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{logomatua-3p.pdf} 
+\caption{Ejemplo de una figura}
+\end{figure}
+\label{cs3}
+Lo mismo se puede hacer con las figuras se puede colocar una figura en linea con el entorno {\tt \bf figurehere} así:\\[1cm]
+\begin{figurehere}
+\includegraphics[scale=0.6]{logoua-3p.pdf} 
+\end{figurehere}
+%\lipsum[9-15]
+\begin{definition}[label]
+Let $(X, \mu)$ and  $(Y, \nu)$ be a generalized topological spaces. A function $f: (X, \mu)\rightarrow (Y, \nu)$ is said to be $(\kappa, \lambda)$-continuous if $x\in X$ and $N\in \upsilon$, $f(x)\in N$ imply the existence of $M\in \mu$ such that $x\in M$ and $f(\kappa M)\subset \lambda N$.
+\end{definition}
+\begin{theorem}[Etiqueta]\label{t4.2}
+Let $(X, \mu)$ and  $(Y, \nu)$ be a generalized topological spaces and $f: (X, \mu)\rightarrow (Y, \nu)$ a $(\kappa, \lambda)$-continuous function. Then the following hold:
+\begin{enumerate}
+\item  $f(c_\kappa(A))\subset c_{\lambda}(f(A))$ holds for every subset $A$ of $(X, \mu)$.
+\item  for every $\lambda_\nu$-open set $B$ of $(Y, \nu)$, $f^{-1}(B)$ is $\kappa_\mu$-open in $(X, \mu)$.
+\end{enumerate}
+\end{theorem}
+
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% References
+%%
+%% Following citation commands can be used in the body text:
+%% Usage of \cite is as follows:
+%%   \cite{key}         ==>>  [#]
+%%   \cite[chap. 2]{key} ==>> [#, chap. 2]
+%%
+
+%% References with BibTeX database:
+
+%\bibliographystyle{elsarticle-num}
+%\bibliography{<your-bib-database>}
+
+%% Authors are advised to use a BibTeX database file for their reference list.
+%% The provided style file elsarticle-num.bst formats references in the required Procedia style
+
+%% For references without a BibTeX database:
+
+% \begin{thebibliography}{00}
+
+%% \bibitem must have the following form:
+%%   \bibitem{key}...
+%%
+
+% \bibitem{}
+
+% \end{thebibliography}
+%\end{multicols}
+\begin{thebibliography}{99}
+\bibitem{REF_1} Instituto Colombiano de Normas Técnicas y Certificación. \textit{Referencias bibliográficas para publicaciones seriadas}. \textbf{2 ed},  Bogotá,  ICONTEC,  1996,  p. 21.
+\bibitem{REF_2} Instituto Colombiano de Normas Técnicas y Certificación.\textit{Referencias bibliográficas para libros,  folletos e informes}. \textbf{2 ed},  Bogotá,  ICONTEC,  1996,  p 12.
+\bibitem{DL} Instituto Colombiano de Normas Técnicas y Certificación,  \textit{Op. cit.},  p. 12-13.
+\bibitem{REF_4} Instituto Colombiano de Normas Técnicas y Certificación. \textit{Referencias documentales para fuentes de información electrónicas}. Bogotá,  ICONTEC,  \textbf{NTC 4490},  1998,  p. 23.
+\bibitem{Ref_5} Jos\'e Saramago. \textit{Discurso de aceptación del premio Nobel}, Premio Nobel de Literatura, 1998, Disponible en: http://saramago.blogspot.com/2004/10/discurso-de-aceptacin-del-premio-nobel.html, citado el 25 de mayo de 2010.
+\end{thebibliography}
+\end{document}
+
+
+%%
+%% End of file `matua-article-4p-template.tex'. 

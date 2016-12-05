@@ -1,0 +1,316 @@
+	
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Los textos escolares y el error en matemáticas | K. | Revista de Matemática MATUA</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Los textos escolares y el error en matemáticas" />
+	
+	
+	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+
+	<meta name="DC.Contributor.Sponsor" xml:lang="es" content=""/>
+	<meta name="DC.Creator.PersonalName" content="Walter O. Beyer K."/>
+	<meta name="DC.Date.created" scheme="ISO8601" content="2014-06-18"/>
+	<meta name="DC.Date.dateSubmitted" scheme="ISO8601" content="2014-06-18"/>
+	<meta name="DC.Date.issued" scheme="ISO8601" content="2014-06-27"/>
+	<meta name="DC.Date.modified" scheme="ISO8601" content="2014-06-18"/>
+	<meta name="DC.Description" xml:lang="es" content="El presente trabajo es un estudio acerca de los errores, malentendidos y obstáculos en la enseñanza/aprendizaje de las matemáticas, enfatizando su presencia en los textos escolares. Sin entrar en una teorización profunda de las nociones de error y malentendido se definirán ambos, mostrando similitudes y diferencias entre ellos. Asimismo, se estudia el constructo obstáculo, poniendo atención a los obstáculos didácticos. Se presentan una serie de situaciones en las cuales aparecen errores, malentendidos y obstáculos. Se muestra la posibilidad de categorizar los errores, a cuyo fin se presentan varias clasificaciones. Se seleccionó un grupo de textos escolares usados en Venezuela y de ellos fue extraída una selección representativa de situaciones de aprendizaje, las cuales son analizadas a la luz de los elementos discutidos con anterioridad en el trabajo. Como resultado de la revisión de los textos se obtuvo un cúmulo de errores, fundamentalmente aquellos de tipo conceptual están presentes en ellos. En algunos temas, como el relacionado con las medidas, esto puede dar una explicación parcial de los deficientes resultados que muestran los estudiantes de ese país en este tema del currículum. Finalmente, se exponen algunas estrategias para enfrentar los errores y los malentendidos, alternativas que se distancian enormemente de la clásica penalización; así como se muestra también la posibilidad de construcción de situaciones didácticas partiendo de los errores, convirtiendo a ´estos en una oportunidad para el aprendizaje."/>
+	<meta name="DC.Format" scheme="IMT" content="application/pdf"/>
+	<meta name="DC.Identifier" content="1034"/>
+	<meta name="DC.Identifier.URI" content="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/article/view/1034"/>
+	<meta name="DC.Language" scheme="ISO639-1" content="es"/>
+	<meta name="DC.Source" content="Revista de Matemática MATUA"/>
+	<meta name="DC.Source.ISSN" content="2389-7422"/>
+	<meta name="DC.Source.Issue" content="1"/>	<meta name="DC.Source.URI" content="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA"/>
+	<meta name="DC.Source.Volume" content="1"/>	<meta name="DC.Title" content="Los textos escolares y el error en matemáticas"/>
+		<meta name="DC.Type" content="Text.Serial.Journal"/>
+	<meta name="DC.Type.articleType" content="Artículos"/>
+		<meta name="gs_meta_revision" content="1.1" />
+	<meta name="citation_journal_title" content="Revista de Matemática MATUA"/>
+	<meta name="citation_issn" content="2389-7422"/>
+        <meta name="citation_author" content="Walter O. Beyer K."/>
+<meta name="citation_title" content="Los textos escolares y el error en matemáticas"/>
+
+	<meta name="citation_date" content="2014/06/18"/>
+
+	<meta name="citation_volume" content="1"/>
+	<meta name="citation_issue" content="1"/>
+
+	<meta name="citation_abstract_html_url" content="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/article/view/1034"/>
+	<meta name="citation_language" content="es"/>
+						<meta name="citation_pdf_url" content="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/article/download/1034/679"/>
+				
+
+	<link rel="stylesheet" href="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/styles/pkp.css" type="text/css" />
+	<link rel="stylesheet" href="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/styles/common.css" type="text/css" />
+	<link rel="stylesheet" href="http://investigaciones.uniatlantico.edu.co/revistas/styles/common.css" type="text/css" />
+	<link rel="stylesheet" href="http://investigaciones.uniatlantico.edu.co/revistas/styles/compiled.css" type="text/css" />
+	<link rel="stylesheet" href="http://investigaciones.uniatlantico.edu.co/revistas/styles/articleView.css" type="text/css" />
+	
+	
+	
+	<link rel="stylesheet" href="http://investigaciones.uniatlantico.edu.co/revistas/styles/sidebar.css" type="text/css" />		<link rel="stylesheet" href="http://investigaciones.uniatlantico.edu.co/revistas/styles/rightSidebar.css" type="text/css" />	
+	
+	<!-- Base Jquery -->
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		// Provide a local fallback if the CDN cannot be reached
+		if (typeof google == 'undefined') {
+			document.write(unescape("%3Cscript src='http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/lib/jquery/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+			document.write(unescape("%3Cscript src='http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/lib/jquery/plugins/jqueryUi.min.js' type='text/javascript'%3E%3C/script%3E"));
+		} else {
+			google.load("jquery", "1.4.4");
+			google.load("jqueryui", "1.8.6");
+		}
+	</script>
+	
+	<script type="text/javascript">
+		$(function(){
+			fontSize("#sizer", "body", 9, 16, 32, "/revistas"); // Initialize the font sizer
+		});
+	</script>
+
+	<!-- Compiled scripts -->
+			
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/lib/jquery/plugins/jquery.tag-it.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/lib/jquery/plugins/jquery.cookie.js"></script>
+
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/functions/fontController.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/functions/general.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/functions/jqueryValidatorI18n.js"></script>
+
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/classes/Helper.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/classes/ObjectProxy.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/classes/Handler.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/classes/linkAction/LinkActionRequest.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/classes/features/Feature.js"></script>
+
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/controllers/SiteHandler.js"></script><!-- Included only for namespace definition -->
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/controllers/UrlInDivHandler.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/controllers/AutocompleteHandler.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/controllers/ExtrasOnDemandHandler.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/controllers/form/FormHandler.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/controllers/form/ClientFormHandler.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/controllers/grid/GridHandler.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/controllers/linkAction/LinkActionHandler.js"></script>
+
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/js/pages/search/SearchFormHandler.js"></script>
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/plugins/generic/lucene/js/LuceneAutocompleteHandler.js"></script>
+
+<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/lib/pkp/js/lib/jquery/plugins/jquery.pkp.js"></script>	
+	
+	<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/js/relatedItems.js"></script>
+	<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/js/inlinePdf.js"></script>
+	<script type="text/javascript" src="http://investigaciones.uniatlantico.edu.co/revistas/js/pdfobject.js"></script>
+
+</head>
+<body>
+
+<div id="container">
+
+<div id="header">
+<div id="headerTitle">
+<h1>
+	<img src="http://investigaciones.uniatlantico.edu.co/revistas/public/journals/15/pageHeaderTitleImage_es_ES.png" width="1423" height="155" alt="Encabezado de página" />
+</h1>
+</div>
+</div>
+
+<div id="body">
+
+	<div id="sidebar">
+							<div id="rightSidebar">
+				<div class="block" id="sidebarDevelopedBy">
+	<a class="blockTitle" href="http://pkp.sfu.ca/ojs/" id="developedBy">Open Journal Systems</a>
+</div><div class="block" id="sidebarHelp">
+	<a class="blockTitle" href="javascript:openHelp('http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/help')">Ayuda de la revista</a>
+</div><div class="block" id="sidebarUser">
+			<span class="blockTitle">Usuario/a</span>
+	
+						<form method="post" action="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/login/signIn">
+				<table>
+					<tr>
+						<td><label for="sidebar-username">Nombre de usuario/a</label></td>
+						<td><input type="text" id="sidebar-username" name="username" value="" size="12" maxlength="32" class="textField" /></td>
+					</tr>
+					<tr>
+						<td><label for="sidebar-password">Contraseña</label></td>
+						<td><input type="password" id="sidebar-password" name="password" value="" size="12" maxlength="32" class="textField" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="checkbox" id="remember" name="remember" value="1" /> <label for="remember">No cerrar sesión</label></td>
+					</tr>
+					<tr>
+						<td colspan="2"><input type="submit" value="Iniciar sesión" class="button" /></td>
+					</tr>
+				</table>
+			</form>
+			</div> <div class="block" id="notification">
+	<span class="blockTitle">Notificaciones</span>
+	<ul>
+					<li><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/notification">Ver</a></li>
+			<li><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/notification/subscribeMailList">Suscribirse</a></li>
+			</ul>
+</div>
+<div class="block" id="sidebarNavigation">
+	<span class="blockTitle">Contenido de la revista</span>
+
+	<span class="blockSubtitle">Buscar</span>
+	<form id="simpleSearchForm" method="post" action="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/search/search">
+		<table id="simpleSearchInput">
+			<tr>
+				<td>
+													<script type="text/javascript">
+			
+				$(function() {
+		$('#simpleQueryAutocomplete').pkpHandler(
+			'$.pkp.plugins.generic.lucene.LuceneAutocompleteHandler',
+			{
+				sourceUrl: "http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/lucene/queryAutocomplete",
+				searchForm: "simpleSearchForm"
+			});
+	});
+</script>
+<span id="simpleQueryAutocomplete">
+	<input type="text" id="simpleQuery_input" name="simpleQuery" size="15" maxlength="255" value="" class="textField" />
+	<input type="hidden" id="simpleQuery" name="simpleQuery_hidden" value="" />
+	<script type="text/javascript">
+				$('#simpleQuery_input').attr('name', 'simpleQuery_input');
+		$('#simpleQuery').attr('name', 'simpleQuery');
+	</script>
+</span>
+								</td>
+			</tr>
+			<tr>
+				<td><select id="searchField" name="searchField" size="1" class="selectMenu">
+					<option label="Todos" value="query">Todos</option>
+<option label="Autores/as" value="authors">Autores/as</option>
+<option label="Título" value="title">Título</option>
+<option label="Resumen" value="abstract">Resumen</option>
+<option label="Términos de indexación" value="indexTerms">Términos de indexación</option>
+<option label="Texto completo" value="galleyFullText">Texto completo</option>
+
+				</select></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Buscar" class="button" /></td>
+			</tr>
+		</table>
+	</form>
+
+	<br />
+
+		<span class="blockSubtitle">Examinar</span>
+	<ul>
+		<li><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/issue/archive">Por número</a></li>
+		<li><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/search/authors">Por autor/a</a></li>
+		<li><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/search/titles">Por título</a></li>
+		
+					<li><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/index">Otras revistas</a></li>
+						</ul>
+	</div>
+<div class="block" id="sidebarFontSize" style="margin-bottom: 4px;">
+	<span class="blockTitle">Tamaño de fuente</span>
+	<div id="sizer"></div>
+</div>
+<br /><div class="block" id="sidebarInformation">
+	<span class="blockTitle">Información</span>
+	<ul>
+		<li><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/information/readers">Para los lectores/as</a></li>		<li><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/information/authors">Para los autores/as</a></li>		<li><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/information/librarians">Para los bibliotecarios/as</a></li>	</ul>
+</div>
+
+			</div>
+			</div>
+
+<div id="main">
+
+<div id="navbar">
+	<ul class="menu">
+		<li id="home"><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/index">Inicio</a></li>
+		<li id="about"><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/about">Acerca de</a></li>
+
+					<li id="login"><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/login">Iniciar sesión</a></li>
+							<li id="register"><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/user/register">Registrarse</a></li>
+												<li id="search"><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/search">Buscar</a></li>
+		
+					<li id="current"><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/issue/current">Ultimo Numero</a></li>
+			<li id="archives"><a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/issue/archive">Números Anteriores</a></li>
+		
+				
+
+								</ul>
+</div>
+
+<div id="breadcrumb">
+	<a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/index" target="_parent">Inicio</a> &gt;
+	<a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/issue/view/80" target="_parent">Vol. 1, núm. 1 (2014)</a> &gt;	<a href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/article/view/1034/679" class="current" target="_parent">K.</a>
+</div>
+
+<div id="content">
+
+			
+<div id="pdfDownloadLinkContainer">
+	<a class="action pdf" id="pdfDownloadLink" target="_parent" href="http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/article/download/1034/679">Descargar este archivo PDF</a>
+</div>
+
+
+
+<script type="text/javascript"><!--
+	$(document).ready(function(){
+		if ($.browser.webkit) { // PDFObject does not correctly work with safari's built-in PDF viewer
+			var embedCode = "<object id='pdfObject' type='application/pdf' data='http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/article/viewFile/1034/679' width='99%' height='99%'><div id='pluginMissing'><p>El archivo PDF que ha seleccionado se debe cargar aquí si su navegador tiene instalado un conector de lectura de PDF (por ejemplo, una versión reciente de <a href=\"http://www.adobe.com/products/acrobat/readstep2.html\">Adobe Acrobat Reader<\/a>).<\/p> <p>Asimismo, también puede descargar el archivo PDF directamente a su ordenador para abrirlo con un lector de PDF. Para descargar el PDF, haga clic en el enlace de descarga.<\/p> <p>Si desea obtener más información acerca de cómo imprimir, guardar y trabajar con archivos PDF, Highwire Press cuenta con una útil <a href=\"http://highwire.stanford.edu/help/pdf-faq.dtl\">lista de preguntas frecuentes sobre archivos PDF<\/a>.<\/p></div></object>";
+			$("#inlinePdf").html(embedCode);
+			if($("#pluginMissing").is(":hidden")) {
+				$('#fullscreenShow').show();
+				$("#inlinePdf").resizable({ containment: 'parent', handles: 'se' });
+			} else { // Chrome Mac hides the embed object, obscuring the text.  Reinsert.
+				$("#inlinePdf").html('<div id="pluginMissing"><p>El archivo PDF que ha seleccionado se debe cargar aquí si su navegador tiene instalado un conector de lectura de PDF (por ejemplo, una versión reciente de <a href=\"http://www.adobe.com/products/acrobat/readstep2.html\">Adobe Acrobat Reader<\/a>).<\/p> <p>Asimismo, también puede descargar el archivo PDF directamente a su ordenador para abrirlo con un lector de PDF. Para descargar el PDF, haga clic en el enlace de descarga.<\/p> <p>Si desea obtener más información acerca de cómo imprimir, guardar y trabajar con archivos PDF, Highwire Press cuenta con una útil <a href=\"http://highwire.stanford.edu/help/pdf-faq.dtl\">lista de preguntas frecuentes sobre archivos PDF<\/a>.<\/p></div>');
+			}
+		} else {
+			var success = new PDFObject({ url: "http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA/article/viewFile/1034/679" }).embed("inlinePdf");
+			if (success) {
+				// PDF was embedded; enbale fullscreen mode and the resizable widget
+				$('#fullscreenShow').show();
+				$("#inlinePdfResizer").resizable({ containment: 'parent', handles: 'se' });
+			}
+		}
+	});
+
+// -->
+</script>
+<div id="inlinePdfResizer">
+	<div id="inlinePdf" class="ui-widget-content">
+		<div id='pluginMissing'><p>El archivo PDF que ha seleccionado se debe cargar aquí si su navegador tiene instalado un conector de lectura de PDF (por ejemplo, una versión reciente de <a href="http://www.adobe.com/products/acrobat/readstep2.html">Adobe Acrobat Reader</a>).</p> <p>Asimismo, también puede descargar el archivo PDF directamente a su ordenador para abrirlo con un lector de PDF. Para descargar el PDF, haga clic en el enlace de descarga.</p> <p>Si desea obtener más información acerca de cómo imprimir, guardar y trabajar con archivos PDF, Highwire Press cuenta con una útil <a href="http://highwire.stanford.edu/help/pdf-faq.dtl">lista de preguntas frecuentes sobre archivos PDF</a>.</p></div>
+	</div>
+</div>
+<p>
+	<a class="action" href="#" id="fullscreenShow">Pantalla completa</a>
+	<a class="action" href="#" id="fullscreenHide">Pantalla completa desactivada</a>
+</p>
+<div style="clear: both;"></div>	
+
+
+<div class="separator"></div>
+
+<h3>Enlaces refback</h3>
+
+<ul class="plain">
+				<li>No hay ningún enlace refback.</li>
+	</ul>
+
+
+
+
+</div><!-- content -->
+</div><!-- main -->
+</div><!-- body -->
+
+
+
+</div> <!-- container -->
+</body>
+</html>

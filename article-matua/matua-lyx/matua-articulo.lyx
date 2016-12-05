@@ -1,0 +1,1122 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass matua-article
+\begin_preamble
+
+% Template for Elsevier CRC journal article
+% version 1.1 dated 16 July 2013
+
+% This file (c) 2013 Programa de matemáticas.  Modifications may be freely made,
+% provided the edited file is saved under a different name
+% This file contains modifications for MATUA journals
+% but may easily be adapted to other journals
+
+% Changes since version 1.0
+% - matua-article class option changed from 1p to 4p (to better reflect CRC layout)
+
+%-----------------------------------------------------------------------------------
+
+%% This template uses the matua-article.cls document class and the extension package ecrc.sty
+%% For full documentation on usage of matua-article.cls, consult the documentation "matua-doc.pdf"
+%% Further resources available at http://www.matua.com/latex
+
+%-----------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Important note on usage                  %%
+%% -----------------------                  %%
+%% This file must be compiled with PDFLaTeX %%
+%% Using standard LaTeX will not work!      %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\batchmode
+\makeatletter
+\def\input@path{{style/}{sections/}}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{matua-ecrc}
+\usepackage{balance}
+\usepackage[activeacute,spanish,es-tabla]{babel}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{multicol}
+%\usepackage[latin1,utf8x]{inputenc}
+\usepackage{amssymb,amsmath}
+\usepackage{supertabular,float}
+\usepackage{fixltx2e}
+\usepackage{dblfloatfix}
+\graphicspath{{pdf/}{ps/}{image/}{sections/Figures/}}
+% Figures within a column...
+\makeatletter
+\newenvironment{tablehere}
+{\def\@captype{table*}}
+{}
+\newenvironment{figurehere}
+{\def\@captype{figure*}}
+{}
+\makeatother
+
+%% The ecrc package defines commands needed for running heads and logos.
+%% For running heads, you can set the journal name, the volume, the starting page and the authors
+
+%% set the volume if you know. Otherwise `00'
+\volume{I}
+\matuavolumen{III}
+\matuayear{2016}
+
+%% set the starting page if not 1
+\firstpage{1}
+
+%% Give the name of the journal
+\journalname{Revista Del Programa De Matem\'aticas}
+
+%% Give the author list to appear in the running head
+%% Example \runauth{C.V. Radhakrishnan et al.}
+\runauth{El autor}
+
+%% The choice of journal logo is determined by the \jid and \jnltitlelogo commands.
+%% A user-supplied logo with the name <\jid>logo.pdf will be inserted if present.
+%% e.g. if \jid{yspmi} the system will look for a file yspmilogo.pdf
+%% Otherwise the content of \jnltitlelogo will be set between horizontal lines as a default logo
+
+%% Give the abbreviation of the Journal.
+\jid{procs}
+
+%% Give a short journal name for the dummy logo (if needed)
+%\jnltitlelogo{MATUA}
+
+%% Hereafter the template follows `matua-rticle'.
+%% For more details see the existing template files matua-article-3p-template.tex and matua-article-4p-template.tex.
+%% End of ecrc-specific commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%% \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+% if you have landscape tables
+\usepackage[figuresright]{rotating}
+
+% put your own definitions here:
+%   \newcommand{\cZ}{\cal{Z}}
+%   \newtheorem{def}{Definition}[section]
+%   ...
+
+% add words to TeX's hyphenation exception list
+%\hyphenation{author another created financial paper re-commend-ed Post-Script}
+\newcounter{definition}
+\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+%\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{question}{Question}
+%\renewenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\balance
+% declarations for front matter
+\end_preamble
+\options 4p,times
+\use_default_options false
+\begin_modules
+theorems-std
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package none
+\inputencoding utf8x
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Esta es una plantilla para LyX para diagramar los archivos que son enviados
+ para la publicación en la revista MATUA 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://matua.com.co/
+\end_layout
+
+\end_inset
+
+ o 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://investigaciones.uniatlantico.edu.co/revistas/index.php/MATUA
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout BeginFrontmatter
+
+\end_layout
+
+\begin_layout Titulo
+Un artículo de muestra
+\begin_inset Flex Titlenotemark
+status open
+
+\begin_layout Plain Layout
+t1,t2
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\size normal
+Con 
+\series bold
+\size default
+
+\backslash
+tnoteref
+\series default
+\size normal
+ sus referencias para los pie de títulos.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title(ingles)
+An article sample
+\end_layout
+
+\begin_layout Title footnote
+Este documento es un esfuerzo de colaboración.
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+t1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title footnote
+La segunda nota al pie del título, que es un tiempo más largo que el primero,
+ y con la intención de llenar hasta en más de una línea durante el formateo.
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+t2
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Hay dos estilos de autor posibles:
+\end_layout
+
+\begin_layout Plain Layout
+1.Los Autores uno al lado del otro
+\begin_inset space \hfill{}
+\end_inset
+
+2.
+ Un Autor debajo del otro
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Autor
+\begin_inset space \hfill{}
+\end_inset
+
+Autor
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Correo electrónico
+\begin_inset space \hfill{}
+\end_inset
+
+Correo electrónico
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Autor
+\begin_inset space \hfill{}
+\end_inset
+
+Dirección
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Correo electrónico
+\begin_inset space \hfill{}
+\end_inset
+
+Auhor
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Dirrecciones
+\begin_inset space \hfill{}
+\end_inset
+
+Correo electrónico
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+-------
+\begin_inset space \hfill{}
+\end_inset
+
+Dirección
+\lang english
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Primer autor 
+\begin_inset Flex Authormark
+status collapsed
+
+\begin_layout Plain Layout
+fn1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex CorAuthormark
+status open
+
+\begin_layout Plain Layout
+cor1
+\end_layout
+
+\end_inset
+
+
+\begin_inset Flex CorAuthormark
+status collapsed
+
+\begin_layout Plain Layout
+cor2
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+rvt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Email
+cvr@hotmail.com
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Se requiere al menos una dirección de correo electrónico.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author
+Segundo Autor
+\begin_inset Flex Authormark
+status open
+
+\begin_layout Plain Layout
+fn2
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+rvt,focal
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+Con
+\backslash
+fnref
+\series default
+\size normal
+ se hace referencia a las notas al pie de autor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Email
+http://matua.com.co/
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+url
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author footnote
+Esta es la nota al pie de muestras autor.
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+fn1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Author footnote
+Otra nota autor, pero un poco más largo
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+fn2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corresponding author
+correspondencia del Autor 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+cor1
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corresponding author
+Correspondencia principal del Autor
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+cor2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Address
+Barranquilla Colombia 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+rvt
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Address
+Kilométro 7 via a Puerto colombia 
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+focal
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Este es un ejemplo del segundo estilo de la sección autor:
+\end_layout
+
+\begin_layout Author
+Primer autor
+\end_layout
+
+\begin_layout Email
+
+\shape italic
+cvr@hotmail.com
+\end_layout
+
+\begin_layout Address
+Barranquilla Colombia
+\end_layout
+
+\begin_layout Author
+K.
+\begin_inset space ~
+\end_inset
+
+Barraza
+\end_layout
+
+\begin_layout Email
+
+\shape italic
+http://www.aaaa.com
+\begin_inset Argument 2
+status open
+
+\begin_layout Plain Layout
+url
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Address
+kilométro 7 vía a Puerto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Abstract
+El resumen normalmente no debe tener más de 200 palabras.
+\end_layout
+
+\begin_layout Keywords
+aaaa bbb 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ ccc 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ ccc 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+PACS
+\end_layout
+
+\end_inset
+
+ ccc 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ ddd 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ dddd 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MSC[2008]
+\end_layout
+
+\end_inset
+
+ddddd
+\end_layout
+
+\begin_layout Resumen
+Abstract, should normally be not longer than 200 words.
+\end_layout
+
+\begin_layout Palabras
+aaaa bbb 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ ccc 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ ccc 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+PACS
+\end_layout
+
+\end_inset
+
+ ccc 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ ddd 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+sep
+\end_layout
+
+\end_inset
+
+ dddd 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MSC[2008]
+\end_layout
+
+\end_inset
+
+ddddd
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+separar las palabra claves con 
+\series bold
+
+\backslash
+sep
+\series default
+.
+ 
+\series bold
+
+\backslash
+PACS
+\series default
+ and 
+\series bold
+
+\backslash
+MSC
+\series default
+ son opcionales
+\lang english
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrontmatter
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+mantener esta nota vacia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Use here the command 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+linenumbers 
+\end_layout
+
+\end_inset
+
+ and enable the package 
+\series bold
+lineno
+\series default
+ in the preamble if you need line numbers.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Bla bla, escribir aquí 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "article-full,booklet-full"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{eqnarray}
+A & = & \prod_{i=1}^{\infty}B\nonumber \\
+ & = & C
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Teorema 1
+\end_layout
+
+\begin_layout --Separator--
+
+\end_layout
+
+\begin_layout Theorem
+Teorema 2
+\end_layout
+
+\begin_layout Subsection
+Subsección
+\end_layout
+
+\begin_layout Enumerate
+test
+\end_layout
+
+\begin_layout Enumerate
+test
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Para obtener otro esquema de numeración, no se puede utilizar un argumento
+ de opción (también denominado título corto) como se describe en el manual
+ matua-article.
+ Sin embargo, puede utilizar el siguiente comando TeX-código para lograr
+ lo mismo:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+labelenumi}{(
+\backslash
+roman{enumi})} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+test
+\end_layout
+
+\begin_layout Enumerate
+test
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+labelenumi}{Step
+\backslash
+,
+\backslash
+alph{enumi})} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+test
+\end_layout
+
+\begin_layout Enumerate
+test
+\end_layout
+
+\begin_layout Subsubsection
+Subsubsección
+\end_layout
+
+\begin_layout Standard
+Bla, bla
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+Apendice nombre
+\end_layout
+
+\begin_layout Standard
+Apendice, solo cuando sea necesario.
+\end_layout
+
+\begin_layout Section*
+-----------------
+\end_layout
+
+\begin_layout Standard
+si usted usa BibTeX:
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "xampl,bibliografia"
+options "bibtotoc,elsarticle-harv"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+---------------------
+\end_layout
+
+\begin_layout Standard
+\noindent
+Otra forma de crear la Bibliografía:
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-1"
+
+\end_inset
+
+Frank Mittelbach and Michel Goossens: 
+\emph on
+The LaTeX Companion Second Edition.
+
+\emph default
+ Addison-Wesley, 2004.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "key-2"
+
+\end_inset
+
+Scott Pakin.
+ The comprehensive LaTeX symbol list, 2005.
+\end_layout
+
+\end_body
+\end_document

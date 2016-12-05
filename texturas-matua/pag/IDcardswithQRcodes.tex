@@ -1,0 +1,78 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[english,spanish]{babel}
+\usepackage[utf8]{inputenc}
+
+%Load layout and data packages
+\usepackage{fullpage}
+\usepackage{filecontents}
+\usepackage{csvtools}
+\usepackage{eso-pic}
+\usepackage{graphicx}
+\usepackage{fix-cm}
+%%Load packages for generating QR codes
+\usepackage{pstricks}
+\usepackage{pst-barcode}
+
+\pagestyle{empty}
+
+\setlength{\oddsidemargin}{-15mm}
+
+%%Define a layout including some ID cards for each A4 page
+\AddToShipoutPicture{
+   \setlength\unitlength{1mm}
+    \put(10.5,214){\includegraphics[width=92.5mm,keepaspectratio=true]{Logos/fondoTarjeta}}
+   \put(103.5,214){\includegraphics[width=92.5mm,keepaspectratio=true]{Logos/fondoTarjeta}}
+    \put(10.5,156.5){\includegraphics[width=92.5mm,keepaspectratio=true]{Logos/fondoTarjeta}}
+   \put(103.5,156.5){\includegraphics[width=92.5mm,keepaspectratio=true]{Logos/fondoTarjeta}}
+    \put(10.5,98.5){\includegraphics[width=92.5mm,keepaspectratio=true]{Logos/fondoTarjeta}}
+   \put(103.5,98.5){\includegraphics[width=92.5mm,keepaspectratio=true]{Logos/fondoTarjeta}}
+     \put(10.5,41){\includegraphics[width=92.5mm,keepaspectratio=true]{Logos/fondoTarjeta}}
+    \put(103.5,41){\includegraphics[width=92.5mm,keepaspectratio=true]{Logos/fondoTarjeta}}
+}
+
+%%Load data from a csv file (you could load it from a file or a remote database).
+\begin{filecontents*}{names.csv}
+Name,LastName,Affiliation,qrName,qrLastName,qrAffiliation,qrPhone,qrEmail,qrUrl, qrNote
+Benito,Zaragozí,Universidad de Alicante,Benito Manuel,Zaragozi Zaragozi,Universidad de Alicante,+34965903945,congreso.tig@ua.es,www.congresotig.ua.es,Coordinador XVI congreso TIG
+Beni,Zaragozí,GIS and Chips,Benito Manuel,Zaragozi Zaragozi,GISAndChips,+34965903945,benizar@gmail.com,www.gisandchips.org,Miembro de GIS and Chips
+Alfredo,Ramón,Universidad de Alicante,Alfredo,Ramon Morte,Universidad de Alicante,+34965903945,congreso.tig@ua.es,www.congresotig.ua.es,Director XVI congreso TIG
+José,Torres,Universidad de Alicante,Jose,Torres Prieto,Universidad de Alicante,+34965903945,congreso.tig@ua.es,www.congresotig.ua.es,Tecnico XVI congreso TIG
+José,Navarro,Universidad de Alicante,Jose Tomas,Navarro Carrion,Universidad de Alicante,+34965903945,congreso.tig@ua.es,www.congresotig.ua.es,Coordinador XVI congreso TIG
+José,Mira,Universidad de Alicante,Jose Manuel,Mira Martinez,Universidad de Alicante,+34965903945,congreso.tig@ua.es,www.congresotig.ua.es,Coordinador XVI congreso TIG
+Miguel,Fernández,Universidad de Alicante,Miguel,Fernandez Moreno,Universidad de Alicante,+34965903945,congreso.tig@ua.es,www.congresotig.ua.es,Tecnico XVI congreso TIG
+Estela,García,Universidad de Alicante,Estela,Garcia Botella,Universidad de Alicante,+34965903945,congreso.tig@ua.es,www.congresotig.ua.es,Coordinador XVI congreso TIG
+Pablo,Giménez,Universidad de Alicante,Pablo,Gimenez Font,Universidad de Alicante,+34965903945,congreso.tig@ua.es,www.congresotig.ua.es,Coordinador XVI congreso TIG
+Antonio,Prieto,Colegio de Geógrafos,Antonio,Prieto Cerdan,Colegio de Geografos,+34965903945,congreso.tig@ua.es,www.congresotig.ua.es,Coordinador XVI congreso TIG
+\end{filecontents*}
+
+\begin{document}
+%%applyCSV works as a loop.
+%%We use \insert+FIELD NAME for inserting your data
+\applyCSVfile{names.csv}{
+\noindent \sffamily 
+	\fbox{\hspace{5mm}\vspace{5mm}
+	\begin{minipage}[t][55mm]{85mm}
+    		%\pagecolor[cmyk]{.22,.36,.51,.08}%
+    		\noindent
+    		\textcolor{white}{\textbf{XVI Congreso de TIG}}\\
+    		\rule{80mm}{1mm}\\
+    			\begin{minipage}[t]{36mm}%Start qrcode minipage
+    			\vspace{-1mm}
+\begin{pspicture}(36mm,36mm)%Figure size. Not QR size.
+\psbarcode{MECARD:N:\insertqrLastName,\insertqrName;
+ADR:\insertqrAffiliation;TEL:\insertqrPhone;NOTE:\insertqrNote;EMAIL:\insertqrEmail;URL:\insertqrUrl;}{eclevel=L width=1.4 height=1.4}{qrcode}
+\end{pspicture}    
+    			\end{minipage}%End qrcode minipage
+    			\hspace{1mm}%Gap between qrcode and written ID
+    			\begin{minipage}[t]{43mm}%Stard written ID's minipage
+        		\vspace{-1mm}%
+        			\begin{flushright}
+            			%\centering
+                		\fontsize{30}{36}\selectfont\textcolor{white}{\insertName}\\
+                		\textcolor{white}{\insertLastName}
+                		\LARGE%\vspace{10mm}
+                		\itshape\textcolor{white}{\insertAffiliation}
+        			\end{flushright}
+    			\end{minipage}%End written ID's minipage
+		\end{minipage}}}%End card minipage%End fbox(card)%End loop
+\end{document}

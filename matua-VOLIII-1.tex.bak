@@ -1,0 +1,662 @@
+\batchmode
+\makeatletter
+\def\input@path{{/media/antalcides/Antalcides-EXT2/ua12016/revista-matua//}}
+\makeatother
+\documentclass[twocolumn,spanish,3p,times,balance]{matua-article}
+\usepackage[latin9]{inputenc}
+\usepackage{pdfpages}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{titletoc}
+%\usepackage{hyperref}
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\batchmode
+\makeatletter
+\def\input@path{{style/}{sections/}{pdf/}}
+\makeatother
+
+% Template for Elsevier CRC journal article
+% version 1.1 dated 16 March 2010
+
+% This file (c) 2010 Elsevier Ltd.  Modifications may be freely made,
+% provided the edited file is saved under a different name
+% This file contains modifications for Procedia Computer Science
+% but may easily be adapted to other journals
+
+% Changes since version 1.0
+% - elsarticle class option changed from 1p to 3p (to better reflect CRC layout)
+
+%-----------------------------------------------------------------------------------
+
+%% This template uses the elsarticle.cls document class and the extension package ecrc.sty
+%% For full documentation on usage of elsarticle.cls, consult the documentation "elsdoc.pdf"
+%% Further resources available at http://www.elsevier.com/latex
+
+%-----------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Important note on usage                  %%
+%% -----------------------                  %%
+%% This file must be compiled with PDFLaTeX %%
+%% Using standard LaTeX will not work!      %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The '3p' and 'times' class options of elsarticle are used for Elsevier CRC
+
+
+%% The `ecrc' package must be called to make the CRC functionality available
+\usepackage{matua-ecrc}
+\usepackage{balance}
+\usepackage[activeacute,spanish,]{babel}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{supertabular}
+\usepackage{fixltx2e}
+\usepackage{changepage}
+\usepackage{watermark}
+\usepackage{dblfloatfix}% Figures within a column...
+\graphicspath{{pdf/}{logo/}{figures/}{sections/Figures/}{pdf/}}
+\newenvironment{tablehere}{\def\@captype{table*}}{}
+\newenvironment{figurehere}{\def\@captype{figure*}}{}
+
+
+%% The ecrc package defines commands needed for running heads and logos.
+%% For running heads, you can set the journal name, the volume, the starting page and the authors
+
+%% set the volume if you know. Otherwise `00'
+\volume{I}
+\matuavolumen{I}
+\matuayear{2013}
+
+%% set the starting page if not 1
+\firstpage{1}
+
+%% Give the name of the journal
+\journalname{Revista Del Programa De Matem\'aticas}
+
+%% Give the author list to appear in the running head
+%% Example \runauth{C.V. Radhakrishnan et al.}
+\runauth{El autor}
+
+%% The choice of journal logo is determined by the \jid and \jnltitlelogo commands.
+%% A user-supplied logo with the name <\jid>logo.pdf will be inserted if present.
+%% e.g. if \jid{yspmi} the system will look for a file yspmilogo.pdf
+%% Otherwise the content of \jnltitlelogo will be set between horizontal lines as a default logo
+
+%% Give the abbreviation of the Journal.
+\jid{procs}
+
+%% Give a short journal name for the dummy logo (if needed)
+%\jnltitlelogo{MATUA}
+
+%% Hereafter the template follows `elsarticle'.
+%% For more details see the existing template files elsarticle-template-harv.tex and elsarticle-template-num.tex.
+
+%% Elsevier CRC generally uses a numbered reference style
+%% For this, the conventions of elsarticle-template-num.tex should be followed (included below)
+%% If using BibTeX, use the style file elsarticle-num.bst
+
+%% End of ecrc-specific commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% The amssymb package provides various useful mathematical symbols
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+%% \usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+% if you have landscape tables
+\usepackage[figuresright]{rotating}
+
+% put your own definitions here:
+%   \newcommand{\cZ}{\cal{Z}}
+%   \newtheorem{def}{Definition}[section]
+%   ...
+
+% add words to TeX's hyphenation exception list
+%\hyphenation{author another created financial paper re-commend-ed Post-Script}
+\newcounter{definition}
+%\newtheorem{theorem}{Theorem}[section]
+%\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+%\newtheorem{corollary}[theorem]{Corollary}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{lemma}[theorem]{Lemma}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{remark}[theorem]{Remark}
+%\newtheorem{question}{Question}
+%\renewenvironment{proof}[1][Proof]{\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\renewcommand{\baselinestretch}{1.5}
+\balance
+% declarations for front matter
+
+\makeatother
+
+\usepackage{babel}
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
+
+\begin{document}
+\includepdf{pdf/front-cover.pdf}
+
+\includepdf{pdf/pagina-legal-matua.pdf}
+
+\thispagestyle{empty}
+\onecolumn
+{\begin{adjustwidth}{-1cm}{-1cm}
+\fontsize{9}{8}\selectfont
+
+\begin{center}
+\includegraphics{text2985.png}
+\par\end{center}
+
+\begin{center}
+REVISTA DE MATEMÁTICAS DE LA UNIVERSIDAD DEL ATLÁNTICO
+\par\end{center}
+
+\begin{center}
+ISSN 2389 - 7422 (en línea)
+\par\end{center}
+
+\begin{center}
+FUNDADORES
+\par\end{center}
+
+\begin{center}
+Jorge Rodríguez Contreras
+\par\end{center}
+
+\begin{center}
+Alejandro Urieles Guerrero 
+\par\end{center}
+
+\begin{center}
+Sonia Valbuena 
+\par\end{center}
+
+\begin{center}
+María Angélica Serje
+\par\end{center}
+
+\vfill
+
+\begin{center}
+COMITÉ EDITORIAL\vspace{10pt}
+\par\end{center}
+
+%\begin{multicols}{2}
+
+Jorge Rodríguez Contreras {\small{}( Director )}{\small \par}
+
+Alejandro Urieles Guerrero {\small{}( Editor)}{\small \par}
+
+Sonia Valbuena {\small{}(Coordinadora Editorial)}{\small \par}
+
+Jorge Robinson {\small{}(Editor de la sección de Matemáticas Computacionales)}{\small \par}
+
+Ramiro Peña Galezo {\small{}(Editor de la sección de Matemáticas aplicadas)}{\small \par}
+
+Julio Cesar Romero {\small{}(Editor de la sección de Matemática educativa)}{\small \par}
+
+Lesly Salas Medina {\small{}(Editora de la sección de Estadística)}{\small \par}
+
+Gabriel Vergara Ríos {\small{}(Editor de la sección de Matemática
+pura)}{\small \par}
+
+%\end{multicols}
+
+\vfill
+
+\begin{center}
+\uppercase{ Comité Científico }\vspace{10pt}
+\par\end{center}
+
+%\begin{multicols}{2}
+
+Dr. Carlos Carpintero {\small{}(Universidad de Oriente, Venezuela)}{\small \par}
+
+Dr. José Manuel Rodríguez {\small{}(Universidad Carlos III de Madrid,
+España.)}{\small \par}
+
+Dr. Alfonso Castro. {\small{}(Department of Mathematics. Harvey Mudd
+College. Claremont)}.
+
+Dr. Miguel Caro {\small{}(Universidad del Atlántico - Colombia)}{\small \par}
+
+M.C. María del Pilar Rosado. {\small{}(Universidad Autónoma de Yucatán,
+México)}{\small \par}
+
+M.C. Jesús David Berrio {\small{}(Universidad Industrial de Santander-
+Colombia)}{\small \par}
+
+Dr. Ramón Matos {\small{}(Universidad del Atlántico- Colombia)}{\small \par}
+
+%\end{multicols}
+
+\vfill
+
+\begin{center}
+\uppercase{ Comité de diagramación y Diseño}\vspace{10pt}
+\par\end{center}
+
+María Angélica Serje {\small{}(Coordinadora de Diagramación y Diseño)}{\small \par}
+
+Antalcides Olivo
+
+Laura Rua
+
+Diana Vargas
+
+\vfill
+
+\begin{center}
+\uppercase{ Apoyo Administrativo}\vspace{10pt}
+\par\end{center}
+
+Decanatura de Ciencias Básicas. 
+
+Vicerrectoría de Investigación
+
+\vfill
+
+\end{adjustwidth}
+
+\newpage
+\thispagestyle{empty}
+
+\tableofcontents{}
+\newpage
+
+\fontsize{10}{9}\selectfont
+
+
+\section*{Editorial\addcontentsline{toc}{section}{Editorial}}
+
+La Revista de Matemáticas de la Universidad del Atlántico, MATUA,
+editada por la Universidad del Atlántico tiene por objeto el posicionarse
+como un referente en la publicación de resultados de investigaciones
+locales, nacionales e internacionales en las diferentes áreas de la
+Matemática, incluida su enseñanza.
+
+Este primer número la Revista MATUA, presenta una interesante colección
+de trabajos inéditos en las diferentes secciones que contiene tales
+como artículos de investigación extensos y cortos, notas y artículos
+de revisión. Al respecto, se pueden encontrar contribuciones relacionadas
+con la Enseñanza de las Matemáticas, las Matemáticas Aplicadas y de
+Matemática pura. Escritos por investigadores que poseen formación
+desde el nivel de Doctorado hasta trabajos desarrollados por estudiantes
+de Matemáticas o ciencias puras en compañía de sus tutores u orientadores.
+
+Es importante destacar el profundo agradecimiento que el comité editorial
+manifiesta a las directivas de la Universidad del Atlántico, la Vicerrectoría
+de Investigaciones y su personal de apoyo, a la Decanatura de Ciencias
+Básicas por su incondicional apoyo sin el cual no se hubiera podido
+llevar acabo esta publicación. También agradecemos a todos los investigadores
+evaluadores que nos colaboraron con sus revisiones oportunas, eficientes
+y de calidad sin la cual no hubiésemos podido alcanzar la calidad
+de artículos que hoy presentamos a la comunidad académica.\newpage
+
+\includepdf[pages=-,addtotoc={1,section,1,Los textos escolares y el error en matemáticas,my2_pdf}]{pdf/1034-2873-2-PB}
+
+\includepdf[pages=-,addtotoc={1,section,1,Conjuntos débilmente semi abiertos con respecto a un ideal,my3_pdf}]{pdf/1035-2877-2-PB}
+
+\includepdf[pages=-,addtotoc={1,section,1,Una caracterización de la $\gamma$  - normalidad a través de cierta clase de funciones,my4_pdf}]{pdf/1036-2881-2-PB}
+
+\includepdf[pages=-,addtotoc={1,section,1,Simulación numérica por MDF para la solución de la ecuación diferencial parcial que modela el flujo de contaminantes de un acuífero ,my7_pdf}]{pdf/1037-2885-2-PB}
+
+\includepdf[pages=-,addtotoc={1,section,1,Sobre una extensión de los polinomios de Apóstol- Euler generalizados ,my6_pdf}]{pdf/1038-2889-2-PB}
+
+\includepdf[pages=-,addtotoc={1,section,1,Introducción a la presentación de grupos ,my8_pdf}]{pdf/1039-2893-2-PB}
+
+\includepdf[pages=-,addtotoc={1,section,1,Sobre el teorema de Burnside para anillos de matrices ,my9_pdf}]{pdf/1040-2897-2-PB}
+
+\includepdf[pages=-,addtotoc={1,section,1,Estudio numérico de la propagación de ondas electromagnéticas 2-D por FDTD  ,my11_pdf}]{pdf/1042-2905-3-PB}
+
+\includepdf[pages=-,addtotoc={1,section,1,Espacio de Sobolev $ W^{(m,p)} (\Omega)$ con $1\leq p \leq +\infty $ ,my11_pdf}]{pdf/1041-2901-2-PB}
+
+\includepdf[pages=-,addtotoc={1,section,1,Eventos Académicos y la Investigación en el Programa de Matemáticas de la Universidad del Atlántico ,my12_pdf}]{pdf/1043-2909-1-PB}
+
+\pagestyle{empty}
+
+\begin{center}
+\uppercase{ Políticas del editorial}\vspace{10pt}
+\par\end{center}
+\begin{itemize}
+\item Enfoque y alcance 
+\item Políticas de sección 
+\item Proceso de revisión por pares 
+\item Política de acceso abierto
+\end{itemize}
+\begin{center}
+\vspace{10pt}
+\par\end{center}
+
+\textbf{\small{}Enfoque y alcance}{\small \par}
+
+La Revista de Matemáticas de la Universidad del Atlántico, MATUA,
+del Programa de Matemáticas de la Facultad de Ciencias Básicas, es
+una revista de circulación semestral que publica artículos de trabajos
+de investigación de estudiantes de pregrado y postgrado en el área
+y áreas con estrecha afinidad con las matemáticas, con resultados
+matemáticos, contribuciones en historia, enseñanza de las matemáticas,
+resúmenes de trabajos de grado, notas cortas con la presentación novedosa
+de temas conocidos, eventos matemáticos actuales, acertijos, problemas
+y soluciones. Este proyecto editorial tiene como propósitos contribuir
+en el fortalecimiento del conocimiento y en los procesos de redacción
+y comunicación en el área. La Revista considera para su publicación
+trabajos que sean el resultado o avance de investigaciones no sometidos
+a otra revista y que signifiquen un aporte al conocimiento matemático
+regional, nacional e internacional.
+
+Contacto: Revista MATUA. Universidad del Atlántico, Facultad de Ciencias
+Básicas, Programa de Matemáticas, Coordinadora Editorial, Bloque C,
+piso 6, Km 7 Vía al Mar, Ciudadela Universitaria. Teléfonos celular:
+3113790462, Barranquilla Colombia E-mail: revistamatua@mail.uniatlantico.edu.co
+/ Web Site: http://www. uniatlantico.edu.co, http://www.matua.co.\vspace{10pt}
+
+\textbf{\small{}Políticas de sección} 
+
+Artículos 
+
+Comprobado Abrir envíos 
+
+Comprobado Indizado 
+
+Comprobado Evaluado por pares
+
+Proceso de revisión por pares
+
+FICHA BIBLIOGRÁFICA
+
+TÍTULO REVISTA: MATUA
+
+PERIODICIDAD: Semestral
+
+ENTIDAD RESPONSABLE: Programa de Matemáticas de la Universidad del
+Atlántico, Barranquilla Colombia.
+
+DESCRIPTORES: Matemáticas; Divulgativo; Transmisión de resultados
+de investigación 
+
+PAÍS: Colombia
+
+IDIOMA: Español
+
+webmail: http://www.matua.co, http://www. uniatlantico.edu.co \vspace{10pt}
+
+\textbf{\small{}Política de acceso abierto}{\small \par}
+
+Esta revista proporciona un acceso abierto a su contenido, basado
+en el principio de que ofrecer al público un acceso libre a las investigaciones
+ayuda a un mayor intercambio global del conocimiento.\newpage
+
+\begin{center}
+NORMAS DE PUBLICACIÓN\vspace{10pt}
+\par\end{center}
+
+Los trabajos a someter a la Revista MATUA, deberán presentarse en
+el formato Latex que encuentra en la página web.
+
+Los artículos deberán ser enviados a la redacción de la revista a
+través página web www.uniatlantico.edu.co (plataforma Open Journal
+System- OJS), y/o al correo electrónico revistamatua@mail.uniatlantico.edu.co
+los originales en formato editable (.tex y .pdf ) junto con las imágenes
+incluidas en el artículo.
+
+Los trabajos son revisados en primera instancia por la coordinadora
+editorial, quien verifica el uso adecuado del lenguaje y el cumplimiento
+de requisitos formales como la existencia de resumen del artículo,
+palabras claves y demás secciones del artículo. Se devolverán los
+trabajos que no superen esta primera instancia. Los trabajos aceptados
+en primera instancia son remitidos a los editores de cada sesión contempladas
+por la revista y estos a su vez los direccionan a revisión por pares
+académicos. El proceso de evaluación es doblemente ciego (confidencial),
+y sus resultados serán utilizados con el único propósito de aceptación
+o rechazo del trabajo. En caso de ser necesario, la coordinadora editorial
+solicitará una segunda opinión. La aceptación del trabajo requiere
+al menos una opinión favorable. La revista dará a conocer a los autores
+los contenidos del informe de los pares evaluadores. Como resultado
+del mismo, el Comité Editorial decidirá que el trabajo se publique,
+con modificaciones o sin ellas, o que no se publique. Si a juicio
+de los evaluadores el trabajo es publicable con modificaciones, le
+será devuelto al autor con las observaciones de los árbitros. Los
+cambios solicitados por los pares evaluadores son obligatorios. La
+coordinadora editorial se reserva el derecho de verificar su cumplimiento.
+De no recibirse las correcciones por parte del autor, el Comité Editorial
+dará por sentado que el autor ha desistido de su intención de publicar
+en la Revista. La revista hará su mejor esfuerzo para decidir sobre
+la publicación de los trabajos en los tres meses siguientes después
+de su recibo. Como política editorial, los trabajos previamente rechazados
+no serán reconsiderados. La publicación de originales en la revista
+MATUA no da derecho a remuneración alguna. Los artículos deberán ser
+enviados a la redacción de la revista a través página web www.uniatlantico.edu.co
+(plataforma Open Journal System- OJS), y/o al correo electrónico revistamatua@mail.uniatlantico.edu.co.
+La aceptación y publicación del artículo es responsabilidad exclusiva
+del Comité Editorial de la revista MATUA, quien será el encargado
+de comunicar al autor en el número en que este aparecerá y las fechas
+de publicación del mismo. Durante el proceso de edición la revista
+podrá efectuar las correcciones de estilo pertinente que no afecten
+el sentido global del artículo. El autor deberá autorizar, mediante
+firma de documento (en formato que puede descargarse de la página
+web) la autorización de uso de derechos de propiedad intelectual,
+la utilización de los derechos patrimoniales de autor (reproducción,
+comunicación pública, transformación y distribución) al Programa de
+Matemáticas de la Universidad del Atlántico, para que esta pueda incluir
+el artículo en la Revista MATUA. Es responsabilidad de los autores
+que los textos enviados se ajusten estrictamente a la legalidad de
+toda publicación relativos a los derechos de autor.\vspace{10pt}
+
+\textbf{\small{}Lista preliminar para la preparación de envíos}{\small \par}
+
+Como parte del proceso de envíos, los autores/as están obligados a
+comprobar que su envío cumpla todos los elementos que se muestran
+a continuación. Se devolverán a los autores/as aquellos envíos que
+no cumplan estas directrices.
+
+El envío no ha sido publicado previamente ni se ha sometido a consideración
+por ninguna otra revista (o se ha proporcionado una explicación al
+respecto en los Comentarios al editor/a). El archivo de envío está
+en formato OpenOffice, Microsoft Word, RTF o WordPerfect. Siempre
+que sea posible, se proporcionan direcciones URL para las referencias.
+El texto tiene un interlineado sencillo, un tamaño fuente de 12 puntos,
+se utiliza cursiva en lugar de subrayado (excepto en las direcciones
+URL), y todas las ilustraciones, figuras y tablas se encuentran colocadas
+en los lugares del texto apropiados, en vez de al final. El texto
+reúne las condiciones estilísticas y bibliográficas incluidas en Pautas
+para el autor/a, en Acerca de la revista. En el caso de enviar el
+texto a la sección de evaluación por pares, se siguen las instrucciones
+incluidas en Asegurar una evaluación anónima.\vspace{10pt}
+
+\textbf{\small{}Declaración de privacidad}{\small \par}
+
+Los nombres y las direcciones de correo electrónico introducidos en
+esta revista se usarán exclusivamente para los fines establecidos
+en ella y no se proporcionarán a terceros o para su uso con otros
+fines.\newpage
+
+\begin{center}
+\uppercase{ Información para los lectores/as}\vspace{10pt}
+\par\end{center}
+
+La Revista de Matemáticas de la Universidad del Atlántico, MATUA,
+del Programa de Matemáticas de la Facultad de Ciencias Básicas, es
+una revista de circulación semestral que publica artículos de trabajos
+de investigación de estudiantes de pregrado y postgrado en el área
+y áreas con estrecha afinidad con las matemáticas, con resultados
+matemáticos, contribuciones en historia, enseñanza de las matemáticas,
+resúmenes de trabajos de grado, notas cortas con la presentación novedosa
+de temas conocidos, eventos matemáticos actuales, acertijos, problemas
+y soluciones. Este proyecto editorial tiene como propósitos contribuir
+en el fortalecimiento del conocimiento y en los procesos de redacción
+y comunicación en el área. La Revista considera para su publicación
+trabajos que sean el resultado o avance de investigaciones no sometidos
+a otra revista y que signifiquen un aporte al conocimiento matemático
+regional, nacional e internacional.
+
+Contacto: Revista MATUA. Universidad del Atlántico, Facultad de Ciencias
+Básicas, Programa de Matemáticas, Coordinadora Editorial, Bloque C,
+piso 6, Km 7 Vía al Mar, Ciudadela Universitaria. Teléfonos celular:
+3113790462, Barranquilla Colombia E-mail: revistamatua@mail.uniatlantico.edu.co
+/ Web Site: http://www. uniatlantico.edu.co, http://www.matua.co.
+
+\begin{center}
+\uppercase{ Información para los autores/as}\vspace{10pt}
+\par\end{center}
+
+La Revista de Matemáticas de la Universidad del Atlántico, MATUA,
+del Programa de Matemáticas de la Facultad de Ciencias Básicas, es
+una revista de circulación semestral que publica artículos de trabajos
+de investigación de estudiantes de pregrado y postgrado en el área
+y áreas con estrecha afinidad con las matemáticas, con resultados
+matemáticos, contribuciones en historia, enseñanza de las matemáticas,
+resúmenes de trabajos de grado, notas cortas con la presentación novedosa
+de temas conocidos, eventos matemáticos actuales, acertijos, problemas
+y soluciones. Este proyecto editorial tiene como propósitos contribuir
+en el fortalecimiento del conocimiento y en los procesos de redacción
+y comunicación en el área. La Revista considera para su publicación
+trabajos que sean el resultado o avance de investigaciones no sometidos
+a otra revista y que signifiquen un aporte al conocimiento matemático
+regional, nacional e internacional.
+
+Contacto: Revista MATUA. Universidad del Atlántico, Facultad de Ciencias
+Básicas, Programa de Matemáticas, Coordinadora Editorial, Bloque C,
+piso 6, Km 7 Vía al Mar, Ciudadela Universitaria. Teléfonos celular:
+3113790462, Barranquilla Colombia E-mail: revistamatua@mail.uniatlantico.edu.co
+/ Web Site: http://www. uniatlantico.edu.co, http://www.matua.co.
+
+\begin{center}
+\uppercase{ Información para los bibliotecarios/as}\vspace{10pt}
+\par\end{center}
+
+La Revista de Matemáticas de la Universidad del Atlántico, MATUA,
+del Programa de Matemáticas de la Facultad de Ciencias Básicas, es
+una revista de circulación semestral que publica artículos de trabajos
+de investigación de estudiantes de pregrado y postgrado en el área
+y áreas con estrecha afinidad con las matemáticas, con resultados
+matemáticos, contribuciones en historia, enseñanza de las matemáticas,
+resúmenes de trabajos de grado, notas cortas con la presentación novedosa
+de temas conocidos, eventos matemáticos actuales, acertijos, problemas
+y soluciones. Este proyecto editorial tiene como propósitos contribuir
+en el fortalecimiento del conocimiento y en los procesos de redacción
+y comunicación en el área. La Revista considera para su publicación
+trabajos que sean el resultado o avance de investigaciones no sometidos
+a otra revista y que signifiquen un aporte al conocimiento matemático
+regional, nacional e internacional.
+
+Contacto: Revista MATUA. Universidad del Atlántico, Facultad de Ciencias
+Básicas, Programa de Matemáticas, Coordinadora Editorial, Bloque C,
+piso 6, Km 7 Vía al Mar, Ciudadela Universitaria. Teléfonos celular:
+3113790462, Barranquilla Colombia E-mail: revistamatua@mail.uniatlantico.edu.co
+/ Web Site: http://www. uniatlantico.edu.co, http://www.matua.co. 
+
+\begin{center}
+\uppercase{ Contacto principal}\vspace{10pt}
+\par\end{center}
+
+Revista MATUA Universidad del Atlántico Correo electrónico: revistamatua@mail.uniatlantico.edu.co
+Contacto de soporte
+
+Bryam Pimienta Teléfono: 3197010 ext. 1240 Correo electrónico: bryampimienta@mail.uniatlantico.edu.co
+
+\newpage
+
+\fontsize{8}{7}\selectfont
+
+\vfill
+
+\begin{center}
+\uppercase{ Patrocinadores de la revista Editorial}\vspace{10pt}
+\par\end{center}
+
+La Revista de Matemáticas de la Universidad del Atlántico, MATUA,
+del Programa de Matemáticas de la Facultad de Ciencias Básicas, es
+una revista de circulación semestral que publica artículos de trabajos
+de investigación de estudiantes de pregrado y postgrado en el área
+y áreas con estrecha afinidad con las matemáticas, con resultados
+matemáticos, contribuciones en historia, enseñanza de las matemáticas,
+resúmenes de trabajos de grado, notas cortas con la presentación novedosa
+de temas conocidos, eventos matemáticos actuales, acertijos, problemas
+y soluciones. Este proyecto editorial tiene como propósitos contribuir
+en el fortalecimiento del conocimiento y en los procesos de redacción
+y comunicación en el área. La Revista considera para su publicación
+trabajos que sean el resultado o avance de investigaciones no sometidos
+a otra revista y que signifiquen un aporte al conocimiento matemático
+regional, nacional e internacional.
+
+Contacto: Revista MATUA. Universidad del Atlántico, Facultad de Ciencias
+Básicas, Programa de Matemáticas, Coordinadora Editorial, Bloque C,
+piso 6, Km 7 Vía al Mar, Ciudadela Universitaria. Teléfonos celular:
+3113790462, Barranquilla Colombia E-mail: revistamatua@mail.uniatlantico.edu.co
+/ Web Site: http://www. uniatlantico.edu.co, http://www.matua.co.
+
+Universidad del Atlántico Patrocinadores
+
+Facultad de Ciencias Báscias- Universidad del Atlántico
+
+Programa de Matemáticas - Universidad del Atlántico
+
+Fuentes de ayuda
+
+Bryam Pimienta\vfill
+\pagebreak{}
+
+\thiswatermark{\centering \put(-64,-825){\includegraphics[width= \paperwidth]{back-cover.pdf}} }
+
+\thispagestyle{empty}\vspace*{8cm}
+%\color{white}{\tableofcontents{}}
+\color{white}{
+\begin{center}
+{ \bf\Large Artículos de la revista}
+\end{center}
+\startlist{toc}
+\setcounter{section}{0}
+%\printlist{toc}{}{\section*{Artículos del volumen}}
+\section{Los textos escolares y el error en matemáticas}
+\section{Conjuntos débilmente semi abiertos con respecto a un ideal}
+\section{Una caracterización de la $\gamma$  - normalidad a través de cierta clase de funciones}
+\section{Simulación numérica por MDF para la solución de la ecuación diferencial parcial que modela el flujo de contaminantes de un acuífero}
+\section{Sobre una extensión de los polinomios de Apóstol- Euler generalizados}
+ \section{Introducción a la presentación de grupos}
+ \section{Sobre el teorema de Burnside para anillos de matrices }
+ \section{Estudio numérico de la propagación de ondas electromagnéticas 2-D por FDTD } 
+\section{Espacio de Sobolev $ W^{(m,p)} (\Omega)$ con $1\leq p \leq +\infty $ }
+\section{Eventos Académicos y la Investigación en el Programa de Matemáticas de la Universidad del Atlántico}
+                                                            } 
+
+\end{document}
